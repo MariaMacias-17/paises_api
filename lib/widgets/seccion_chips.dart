@@ -51,6 +51,7 @@ class SeccionChips extends StatelessWidget {
     );
   }
 
+  // un chip de la lista
   Widget _chip(String item) {
     final sePuedeTocar = onTapItem != null;
 

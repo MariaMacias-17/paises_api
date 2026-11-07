@@ -1,11 +1,9 @@
-// esta entity la saque de quicktype pegando la respuesta de la api,
-// pero la recorte y deje solo lo que uso en la app.
-// la version completa me daba errores porque:
-//  - tenia clases llamadas Object y Colors que chocan con las de dart y flutter
-//  - todo era required y no nulo, y hay paises que traen campos en null
-//    (por ejemplo paises sin capital o sin fronteras) entonces se rompia el fromJson
-// por eso aqui casi todo es opcional (?) o una lista vacia si no viene
+// entity: representa el json tal cual como lo devuelve la api de rest countries.
+// solo tiene los campos que uso en la app.
+// los campos son opcionales (?) o listas vacias porque hay paises
+// que no traen capital, fronteras, etc
 
+// respuesta completa de la api: { "data": { ... } }
 class Paises {
   final Data data;
 
@@ -15,6 +13,7 @@ class Paises {
       Paises(data: Data.fromJson(json["data"]));
 }
 
+// lo que viene dentro de "data": la lista de paises y la info de la paginacion
 class Data {
   // los paises llegan en data.objects
   final List<PaisApi> objects;
@@ -52,7 +51,7 @@ class Meta {
   );
 }
 
-// en quicktype esta clase se llamaba Object, le cambie el nombre a PaisApi
+// un pais como viene de la api
 class PaisApi {
   final Names? names;
   final Codes? codes;
@@ -108,6 +107,7 @@ class PaisApi {
   );
 }
 
+// nombres del pais: comun, oficial y traducciones
 class Names {
   final String? common;
   final String? official;
@@ -127,7 +127,7 @@ class Names {
   );
 }
 
-// en quicktype se llamaba Spa
+// nombre del pais en un idioma
 class Translation {
   final String? common;
   final String? official;
@@ -138,6 +138,7 @@ class Translation {
       Translation(common: json["common"], official: json["official"]);
 }
 
+// codigos del pais, el alpha_3 (ej: COL) es el que uso para el detalle
 class Codes {
   final String? alpha2;
   final String? alpha3;
@@ -157,6 +158,7 @@ class Capital {
       Capital(name: json["name"]);
 }
 
+// urls de la imagen de la bandera
 class Flag {
   final String? emoji;
   final String? urlPng;
@@ -176,7 +178,7 @@ class Area {
 
   Area({this.kilometers});
 
-  // lo paso a double porque a veces llega como int y a veces con decimales
+  // lo paso a double porque puede llegar como int o con decimales
   factory Area.fromJson(Map<String, dynamic> json) =>
       Area(kilometers: (json["kilometers"] as num?)?.toDouble());
 }

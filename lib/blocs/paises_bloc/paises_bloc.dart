@@ -13,6 +13,7 @@ class PaisesBloc extends Bloc<PaisesEvent, PaisesState> {
   final paisesService = PaisesService();
 
   PaisesBloc() : super(const PaisesState()) {
+    // pide a la api la pagina que llega en el evento
     on<CargarPaisesEvent>((event, emit) async {
       // 1. cargando: aviso que estoy cargando y en que pagina quede
       emit(

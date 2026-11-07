@@ -1,5 +1,6 @@
 part of 'pais_detalle_bloc.dart';
 
+// estado del detalle: si esta cargando, si hubo error y el pais
 class PaisDetalleState extends Equatable {
   // empieza en true porque apenas abro la pantalla ya voy a pedir el pais
   final bool isLoading;

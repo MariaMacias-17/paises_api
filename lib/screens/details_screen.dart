@@ -11,6 +11,7 @@ import 'package:paises_api/widgets/error_vista.dart';
 import 'package:paises_api/widgets/region_chip.dart';
 import 'package:paises_api/widgets/seccion_chips.dart';
 
+// pantalla de detalle de un pais.
 // el bloc de esta pantalla se crea en routes.dart con el codigo de la url
 class DetailsScreen extends StatelessWidget {
   final String code;
@@ -47,6 +48,7 @@ class DetailsScreen extends StatelessWidget {
     );
   }
 
+  // arma toda la info del pais cuando ya cargo
   Widget _detalle(BuildContext context, PaisesModelDetails pais) {
     // CustomScrollView con SliverAppBar para que la bandera grande
     // se encoja cuando hago scroll hacia abajo

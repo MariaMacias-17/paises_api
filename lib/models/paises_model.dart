@@ -1,7 +1,7 @@
-// estos son los modelos que usa la app, ya limpios y solo con lo que muestro.
-// la entity es como viene la api, el model es como lo necesito yo en las pantallas
+// modelos que usan las pantallas.
+// la entity es como viene la api y el model es como lo necesito para mostrarlo
 
-// lo que necesito para cada tarjeta de la lista
+// datos de cada tarjeta de la lista
 class PaisesModelList {
   // el codigo alpha_3 (ej: COL) lo uso para navegar al detalle /country/COL
   final String? codigo;
@@ -19,7 +19,7 @@ class PaisesModelList {
   });
 }
 
-// lo que necesito para la pantalla de detalle
+// datos de la pantalla de detalle
 class PaisesModelDetails {
   final String? codigo;
   final String? bandera;
@@ -29,7 +29,7 @@ class PaisesModelDetails {
   final String? region;
   final String? subregion;
   final int? poblacion;
-  // antes tenia Float y eso era de ffi, en dart los decimales son double
+  // area en km2
   final double? area;
   // idiomas, monedas y fronteras pueden ser varios, por eso son listas
   final List<String> idiomas;

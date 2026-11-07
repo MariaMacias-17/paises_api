@@ -5,9 +5,10 @@ import 'package:paises_api/mappers/paises_mapper.dart';
 import 'package:paises_api/models/pagina_paises_model.dart';
 import 'package:paises_api/models/paises_model.dart';
 
+// service: hace las peticiones a la api con dio
 class PaisesService {
-  // a diferencia de pokemon, aqui configuro dio con la url base y el header
-  // de la api key, asi no lo tengo que poner en cada peticion
+  // dio con la url base y el header de la api key,
+  // asi no lo tengo que poner en cada peticion
   final dio = Dio(
     BaseOptions(
       baseUrl: ApiConfig.baseUrl,

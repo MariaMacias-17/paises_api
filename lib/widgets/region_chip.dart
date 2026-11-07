@@ -6,7 +6,7 @@ class RegionChip extends StatelessWidget {
 
   const RegionChip({super.key, required this.region});
 
-  // la api manda las regiones en ingles
+  // devuelve el color segun la region (la api las manda en ingles)
   Color _colorRegion() {
     switch (region) {
       case 'Americas':

@@ -1,5 +1,5 @@
-// para mostrar los numeros grandes con puntos, ej: 50882884 -> 50.882.884
-// lo hice a mano para no instalar el paquete intl solo para esto
+// pone puntos de miles a los numeros grandes, ej: 50882884 -> 50.882.884
+// la uso para la poblacion y el area
 String formatearNumero(num numero) {
   final texto = numero.round().toString();
   final buffer = StringBuffer();

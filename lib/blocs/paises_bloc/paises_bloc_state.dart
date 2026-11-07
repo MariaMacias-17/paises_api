@@ -1,10 +1,11 @@
 part of 'paises_bloc.dart';
 
+// estado de la lista: si esta cargando, si hubo error, los paises y la paginacion
 class PaisesState extends Equatable {
   final bool isLoading;
   final bool hasError;
   final String? mensajeError;
-  // antes tenia un solo pais, pero la lista necesita varios
+  // los paises de la pagina que se esta mostrando
   final List<PaisesModelList> paises;
   final int paginaActual;
   final int totalPaginas;

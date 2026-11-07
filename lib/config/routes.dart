@@ -5,6 +5,7 @@ import 'package:paises_api/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+// rutas de la app: / (lista) y /country/:code (detalle)
 final GoRouter router = GoRouter(
   routes: <RouteBase>[
     GoRoute(

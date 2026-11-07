@@ -8,6 +8,7 @@ class AppTheme {
   static const Color acento = Color(0xFF5EEAD4);
   static const Color textoSecundario = Color(0xFF9AA4B2);
 
+  // tema que se le pasa al MaterialApp en main.dart
   static ThemeData get oscuro => ThemeData(
     useMaterial3: true,
     brightness: Brightness.dark,

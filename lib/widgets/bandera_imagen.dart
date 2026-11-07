@@ -41,6 +41,7 @@ class BanderaImagen extends StatelessWidget {
     );
   }
 
+  // icono que se muestra cuando no hay bandera
   Widget _sinBandera() {
     return Container(
       color: AppTheme.superficieAlta,

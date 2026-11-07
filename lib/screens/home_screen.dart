@@ -7,6 +7,7 @@ import 'package:paises_api/widgets/error_vista.dart';
 import 'package:paises_api/widgets/paginador.dart';
 import 'package:paises_api/widgets/paises_card.dart';
 
+// pantalla principal: lista de paises con el paginador abajo
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -73,7 +74,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  // aqui decido que mostrar segun el estado: cargando, error o la lista
+  // muestra el loader, el error o la lista segun el estado del bloc
   Widget _contenido(BuildContext context, PaisesState state) {
     if (state.isLoading) {
       return const Center(child: CircularProgressIndicator());

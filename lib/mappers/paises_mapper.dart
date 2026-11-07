@@ -1,9 +1,9 @@
 import 'package:paises_api/entities/paises_api.dart';
 import 'package:paises_api/models/paises_model.dart';
 
-// el mapper convierte lo que llega de la api (entity) a mis modelos.
-// igual que en pokemon, pero aqui tengo dos: uno para la lista y otro para el detalle
+// mapper: convierte lo que llega de la api (entity) a los modelos de la app
 class PaisesMapper {
+  // pais de la api -> modelo de la tarjeta de la lista
   static PaisesModelList paisApiToPaisesModelList(PaisApi paisApi) {
     return PaisesModelList(
       codigo: _textoONull(paisApi.codes?.alpha3),
@@ -14,6 +14,7 @@ class PaisesMapper {
     );
   }
 
+  // pais de la api -> modelo de la pantalla de detalle
   static PaisesModelDetails paisApiToPaisesModelDetails(PaisApi paisApi) {
     return PaisesModelDetails(
       codigo: _textoONull(paisApi.codes?.alpha3),
@@ -46,8 +47,8 @@ class PaisesMapper {
     );
   }
 
-  // hay territorios (ej: Abjasia, Somalilandia) que traen el codigo y la bandera
-  // como "" en vez de null, entonces los vacios los paso a null
+  // algunos territorios (ej: Abjasia, Somalilandia) traen el codigo y la bandera
+  // como "" en vez de null, entonces si viene vacio devuelvo null
   static String? _textoONull(String? texto) {
     if (texto == null || texto.isEmpty) return null;
     return texto;
